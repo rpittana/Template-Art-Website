@@ -56,6 +56,18 @@
 }
 
 @media (max-width: 900px) {
+    .main-nav {
+        transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 0.2rem;
+    }
+    .main-nav.hide-nav {
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+    }
     .sidebar {
         position: fixed;
         top: 0;
@@ -80,15 +92,14 @@
         position: static;
         margin-left: 0;
         z-index: 2100;
+        order: -1;         /* Place hamburger first in flex row */
     }
-    .main-nav {
-        z-index: 1000;
-    }
+    /* Remove blur when sidebar is open, since nav will be hidden */
     .sidebar.visible ~ main,
     .sidebar.visible ~ .main-nav {
-        pointer-events: none;
-        opacity: 0.7;
-        filter: blur(1.5px);
+        filter: none;
+        opacity: 1;
+        pointer-events: auto;
     }
 }
 
@@ -243,29 +254,69 @@ body {
 
 .main-nav {
     background: #fff;
-    position: fixed; /* stays at top of viewport */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* span across the screen */
-    z-index: 1000; /* stay above other elements */
+    width: 100%;
+    z-index: 1000;
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    display: flex;
+    align-items: center; /* Align items vertically */
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0 0.5rem;
 }
 
-    .main-nav .sidebar-toggle {
-        display: block;
-        position: static;
-        margin-left: 0;
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    align-items: center;
+    flex: 1 1 0%;
+}
+
+.sidebar-toggle {
+    display: none !important;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    font-size: 2.2rem;
+    padding: 6px 16px 8px 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    transition: background 0.2s;
+    margin-right: 1rem;
+    margin-left: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+@media (max-width: 900px) {
+    .sidebar-toggle {
+        display: block !important;
+        order: -1;         /* Place hamburger first in flex row */
+        margin-right: 1.2rem;
+        margin-left: 0;    /* Remove left margin */
     }
     .main-nav {
+        flex-direction: row;
         justify-content: flex-start;
+        align-items: center;
+        padding-left: 0.2rem;
     }
     .main-nav ul {
         flex: 1 1 0%;
-        justify-content: center;
+        justify-content: flex-start;
         margin-left: 0;
     }
-
-
+    .main-nav {
+        padding-left: 0.2rem;
+    }
+}
 body.work-page .main-nav {
     position: fixed;
 }

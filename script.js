@@ -23,15 +23,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Sidebar toggle for mobile
     const sidebar = document.querySelector('.sidebar');
     const toggleBtn = document.querySelector('.sidebar-toggle');
-    if (sidebar && toggleBtn) {
+    const mainNav = document.querySelector('.main-nav');
+    if (sidebar && toggleBtn && mainNav) {
         // Hide sidebar by default on mobile
         if (window.innerWidth <= 900) {
             sidebar.classList.remove('visible');
+            mainNav.classList.remove('hide-nav');
         }
 
         toggleBtn.addEventListener('click', function(e) {
             e.stopPropagation();
-            sidebar.classList.toggle('visible');
+            const isSidebarVisible = sidebar.classList.toggle('visible');
+            if (isSidebarVisible) {
+                mainNav.classList.add('hide-nav');
+            } else {
+                mainNav.classList.remove('hide-nav');
+            }
         });
 
         // Hide sidebar when clicking outside (on mobile)
@@ -39,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (window.innerWidth <= 900 && sidebar.classList.contains('visible')) {
                 if (!sidebar.contains(e.target) && e.target !== toggleBtn) {
                     sidebar.classList.remove('visible');
+                    mainNav.classList.remove('hide-nav');
                 }
             }
         });
@@ -47,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && sidebar.classList.contains('visible')) {
                 sidebar.classList.remove('visible');
+                mainNav.classList.remove('hide-nav');
             }
         });
 
@@ -55,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', function() {
                 if (window.innerWidth <= 900) {
                     sidebar.classList.remove('visible');
+                    mainNav.classList.remove('hide-nav');
                 }
             });
         });
