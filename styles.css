@@ -55,20 +55,22 @@ body {
     font-size: 1.35rem;
 }
 
-body.work-page {
-    padding-left: 200px; /* Space for the sidebar */
-}
 
 .sidebar {
     position: fixed;
     top: 0;
-    left: 0;
+    left: -200px; /* hidden off screen */
     height: 100vh;
     width: 160px;
     background: #fff;
     padding: 20px;
     border-right: 1px solid #eee;
     z-index: 200;
+    transition: left 0.6s ease; /* smooth animation */
+}
+
+.sidebar.visible {
+    left: 0; /* slides into place */
 }
 
 .sidebar ul {
@@ -131,14 +133,21 @@ body.work-page {
 
 .main-nav {
     background: #fff;
-    position: sticky;
+    position: fixed; /* stays at top of viewport */
     top: 0;
-    z-index: 100;
+    left: 0;
+    width: 100%; /* span across the screen */
+    z-index: 1000; /* stay above other elements */
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
 
+
+.main-nav.visible {
+  top: 0; /* slides in */
+}
+
 body.work-page .main-nav {
-    position: relative;
+    position: fixed;
 }
 
 .main-nav ul {

@@ -20,3 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', revealSections);
     revealSections(); // Initial check
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".sidebar").classList.add("visible");
+  document.querySelector(".main-nav").classList.add("visible");
+});

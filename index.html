@@ -8,14 +8,25 @@
     <title>Brooke Pittana</title>
     <link href="https://fonts.googleapis.com/css2?display=swap&family=Montserrat+Alternates:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
+<style>
+    .oldgallery img {
+        width: 30%;
+        height: auto;
+        margin: 1%;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+</style>
 
 <nav class="main-nav">
     <ul>
-        <li><a href="#home">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="work.html">Work</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
 <header class="hero-header">
@@ -30,19 +41,20 @@
         </section>
         <section id="work">
             <h2>Work</h2>
-            <div class="work-gallery">
-                <img src='images/image33.jpg' alt="Sample Art 1">
-                <img src='images/image49.jpg' alt="Sample Art 2">
-                <img src='images/image52.jpg' alt="Sample Art 3">
-            </div>
-            <a class="more-work-btn" href="work.html">More Work</a>
         </section>
         
     </main>
+    <div class="oldgallery">
+        <img src='images/image33.jpg' alt="Sample Art 1">
+        <img src='images/image49.jpg' alt="Sample Art 2">
+        <img src='images/image52.jpg' alt="Sample Art 3">
+    </div>
+    <main>
+        <a class="more-work-btn" href="work.html">More Work</a>
+    </main>
     <footer>
-        <a href="#contact">Contact</a> |
-        <a href="https://instagram.com/artistname" target="_blank" rel="noopener">Instagram</a> |
-        <a href="https://linkedin.com/in/artistname" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="contact.html">Contact</a> |
+        <a href="https://www.instagram.com/brookep1313/" target="_blank" rel="noopener">Instagram</a>
     </footer>
 </body>
 </html>
