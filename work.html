@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <title>Brooke Pittana</title>
+    <link href="https://fonts.googleapis.com/css2?display=swap&family=Montserrat+Alternates:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js"></script>
+</head>
+<body>
+
+<nav class="main-nav">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+</nav>
+<main>
+    <section>
+        <h2>Range (2025)</h2>
+        <p>A variety of work responding to different prompts and media explorations.</p>
+        <div class="work-gallery">
+            <img src="images/image33.jpg" alt="Portrait 1">
+            <img src="images/image49.jpg" alt="Portrait 2">
+            <img src="images/image48.jpg" alt="Portrait 3">
+            <img src="images/image51.jpg" alt="Portrait 1">
+            <img src="images/image50.jpg" alt="Portrait 2">
+            <img src="images/image53.jpg" alt="Portrait 3">
+        </div>
+    </section>
+    <section>
+        <h2>Dissolution (2024)</h2>
+        <p>"The passage of time is a destructive act" forms the basis of an exploration into how actions lost in routine are rediscovered and immortalized through the act of self portraiture. I paint moments from daily routine in sequence, then dissolve, destroy, or cover layers of paint to emulate the wear of time, indelible markings form the body as ghost images along a timeline. The remnants explore the relationship between transparent forms and opaque lines as symbols of time, importance, and repetition.</p>
+        
+    </section>
+    <div class="work-gallery">
+            <img src="images/2024/image02.png" alt="Landscape 1">
+            <img src="images/2024/image03.jpg" alt="Landscape 2">
+            <img src="images/2024/image04.jpg" alt="Landscape 3">
+            <img src="images/2024/image05.jpg" alt="Landscape 1">
+            <img src="images/2024/image06.jpg" alt="Landscape 2">
+            <img src="images/2024/image17.jpg" alt="Landscape 3">
+            <img src="images/2024/image18.jpg" alt="Landscape 3">
+        </div>
+    <section>
+        <h2>Abstract</h2>
+        <div class="work-gallery">
+            <img src="images/abstract1.jpg" alt="Abstract 1">
+            <img src="images/abstract2.jpg" alt="Abstract 2">
+            <img src="images/abstract3.jpg" alt="Abstract 3">
+        </div>
+    </section>
+</main>
+<script>
+        $(function(){
+                $('.work-gallery').justifiedGallery({
+                    rowHeight: 180,
+                    margins: 8,
+                    lastRow: 'nojustify',
+                    captions: false
+                });
+        });
+</script>
