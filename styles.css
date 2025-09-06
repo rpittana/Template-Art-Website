@@ -168,24 +168,23 @@ section {
     border-bottom: 2px solid #eee;
 }
 
+#newgallery {
+    width: 100%;
+    max-width: 1000px; /* optional, keeps it centered */
+    margin: auto;
+}
 
 .work-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-        width: 100%;
-    padding: 0;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 100; /* small unit */
+    gap: 8px;
 }
 
 .work-gallery img {
-    width: 100%;
+    width: 30vh;
     height: auto;
-    object-fit: contain;
-    border-radius: 14px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-    transition: transform 0.2s;
-        display: block;
-        margin-bottom: 16px;
+    border-radius: 6px;
 }
 
 .work-gallery img:hover {
